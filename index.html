@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<head>
+</head>
+<style>
+	* {
+	padding: 0;
+	margin: 0;
+	}
+	
+	html,
+	body {
+		height: 100%;
+	}
+	
+	canvas {
+		display: block;
+	}
+	
+	h1 {
+		position: fixed;
+		top: 45%;
+		left: 45%;
+		font-size: 2rem;
+		text-align: center;
+		color: #fff3d8;
+		letter-spacing: 4rem;
+		text-indent: 4rem;
+		opacity: 0.9;
+		text-shadow: 0 0 1px rgba(255, 255, 255, 0.7);
+		pointer-events: none;
+	}
+	
+	.btn {
+		position: absolute;
+		color: #fff3d8;
+		font-size: 1.2rem;
+		letter-spacing: 2px;
+		bottom: 1rem;
+		padding: 3px;
+		transition: all .3s;
+	}
+	
+		.btn:hover {
+			cursor: pointer;
+			transform: translateY(2px);
+			background-color: #171102;
+			border-radius: 5px;
+			transition: all .4s;
+		}
+		
+	.btn-start {
+		left: 1rem;
+	}
+	
+	.btn-stop {
+		right: 1rem;
+	}
+	
+</style>
+
+<body onload="start()">
+
+	<canvas id="forest" width="1344" height="446"></canvas>
+	
+	<h1> LIGHT </h1>
+	
+	<p id="toggle_scroll" class="btn btn-start"> Start </p>
+	<!-- <p id="stop" class="btn btn-stop"> Stop </p> -->
+	<script type="text/javascript" src="app.js"></script>
+	
+</body>
+</html>
