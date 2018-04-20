@@ -9,6 +9,7 @@
 	
 	html,
 	body {
+		font-size: 1rem;
 		height: 100%;
 	}
 	
@@ -30,17 +31,18 @@
 		pointer-events: none;
 	}
 	
-	.btn {
+	#start {
 		position: absolute;
 		color: #fff3d8;
 		font-size: 1.2rem;
 		letter-spacing: 2px;
+		left: 1rem;
 		bottom: 1rem;
 		padding: 3px;
 		transition: all .3s;
 	}
 	
-		.btn:hover {
+		#start:hover {
 			cursor: pointer;
 			transform: translateY(2px);
 			background-color: #171102;
@@ -48,14 +50,68 @@
 			transition: all .4s;
 		}
 		
-	.btn-start {
-		left: 1rem;
-	}
-	
-	.btn-stop {
+	#dark {
+		position: absolute;
+		color: #fff3d8;
+		font-size: 1.2rem;
+		letter-spacing: 2px;
 		right: 1rem;
+		bottom: 1rem;
+		padding: 3px;
+		transition: all .3s;
 	}
 	
+		#dark:hover {
+			cursor: pointer;
+			transform: translateY(2px);
+			background-color: #171102;
+			border-radius: 5px;
+			transition: all .4s;
+		}
+	
+	#slider {
+		margin: 10px;
+	}
+	
+	.slider_box {
+		position: absolute;
+		font-size: 1.2rem;
+		letter-spacing: 2px;
+		bottom: .3rem;
+		left: 45%;
+		color: #fff3d8;
+		transition: all .4s;
+		padding: 3px;
+		}
+		
+		.slider_box:hover {
+			cursor: pointer;
+			transform: translateY(2px);
+			background-color: #171102;
+			border-radius: 5px;
+			transition: all .4s;
+			}
+	
+	#weight_value {
+		font-size: .5rem;
+		text-align: center;
+		}
+	
+	@media only screen and (max-width: 600px) {
+		h1 {
+			font-size: 2rem;
+			left: 10%;
+		}
+		
+		#start {
+			font-size: 3rem;
+		}
+		
+		.slider_box {
+	
+		}
+	}
+		
 </style>
 
 <body onload="start()">
@@ -64,8 +120,14 @@
 	
 	<h1> LIGHT </h1>
 	
-	<p id="toggle_scroll" class="btn btn-start"> Start </p>
-	<!-- <p id="stop" class="btn btn-stop"> Stop </p> -->
+	<p id="start"> Light </p> <span id="dark"> Dark </span>
+	
+	<div class="slider_box">
+		<p> Effect Speed </p>
+		<input type="range" min="10" max="100" value="20" id="slider">
+		<p id="weight_value"> 20 </p>
+	</div>
+	
 	<script type="text/javascript" src="app.js"></script>
 	
 </body>
