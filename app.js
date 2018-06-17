@@ -48,15 +48,15 @@ function draw() {
 function drawImage(flip, x, y, w, h) {
 	// take snapshot of our current transformation maxtrix
 	ctx.save();
-	
+
 	let hW = w / 2;
 	let hH = h / 2;
 	let sourceRect = getSourceRect(w,h);
-	
+
 	ctx.translate(x,y);
 	ctx.translate(hW,hH);
 	ctx.scale(flip ? -1 : 1, 1);
-	
+
 	ctx.drawImage(
 		img,
 		sourceRect.x - (mouseX * weight),
@@ -75,12 +75,12 @@ function drawImage(flip, x, y, w, h) {
 function getSourceRect(srcW, srcH) {
 	const destW = img.naturalWidth;
 	const destH = img.naturalHeight;
-	
+
 	const scale = Math.min(destW / srcW, destH / srcH);
-	
+
 	const scaledSrcW = srcW * scale;
 	const scaledSrcH = srcH * scale;
-	
+
 	const startX = (destW - scaledSrcW) * 0.5;
 	const startY = (destH - scaledSrcH) * 0.5;
 	return {
@@ -101,7 +101,7 @@ function getSourceRect(srcW, srcH) {
 function animate() {
 
 	speed(.004);
-	
+
 	// Limits of image scrolling
 	if (mouseX >= 2) {
 		direction = -1;
@@ -110,7 +110,7 @@ function animate() {
 		direction = 1;
 	}
 	draw();
-	
+
 	window.requestAnimationFrame(animate);
 }
 
@@ -119,7 +119,7 @@ function speed(a) {
 	mouseX += a * direction;
 }
 
-document.getElementById("start").addEventListener("click", function() {
+document.getElementById("light").addEventListener("click", function() {
 	img.src = "forest.jpeg";
 	document.querySelector("h1").style.color = "white";
 	document.querySelector("h1").innerHTML = "LIGHT";
@@ -137,6 +137,5 @@ document.getElementById("slider").addEventListener("change", function() {
 	weight = document.getElementById("slider").value;
 	document.getElementById("weight_value").innerHTML = weight;
 });
-		
 
-	
+
